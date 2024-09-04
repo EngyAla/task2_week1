@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(2, 77, 114);
+    padding: 0 30px;
+    top: 80%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50% , -50%);
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+}
+.container .carousel{
+    display: flex;
+    overflow: hidden;
+    height: 300px;
+    width: 790px;
+    scroll-behavior:smooth;
+    font-size: 0;
+    white-space: nowrap;
+}
+.carousel.no-transition{
+    scroll-behavior: auto;
+}
+.carousel img{
+    cursor: pointer;
+    width: calc(100% / 3);
+    height: 340px;
+    margin-left: 20px;
+    object-fit: cover;
+    transition: transform .3s ease;
+}
+.carousel img:hover{
+    transform: scale(1.1,1.1);
+}
+.carousel img:first-child{
+    margin-left: 0;
+}
+i{
+    width: 45px;
+    height: 45px;
+    background-color: #ffff;
+    border-radius: 50%;
+    text-align: center;
+    padding: 15px;
+    margin:0px -20px;
+    cursor: pointer;
+    z-index: 10;
+
+}
+.container i:first-child{
+    left: 200px;
+}
+
+/* Media Queries للتابلت ( 900px) */
+@media (max-width: 900px) {
+    .container .carousel {
+        width: 600px; 
+    }
+
+    .carousel img {
+        width: calc(100% / 2); 
+        height: 300px; 
+    }
+
+    i {
+        width: 40px;
+        height: 40px;
+        padding: 12px;
+        top: 50%;
+    }
+}
+
+/* Media Queries للهواتف المحمولة ( 550px) */
+@media (max-width: 550px) {
+    .container .carousel {
+        width: 300px; 
+    }
+
+    .carousel img {
+        width: 100%; 
+        height: 200px; 
+    }
+
+    i {
+        width: 35px;
+        height: 35px;
+        padding: 10px;
+        top: 50%;
+        transform: translateY(-100%);
+    }
+}
